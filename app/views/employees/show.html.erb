@@ -1,0 +1,16 @@
+<%= @employee.first_name %><br>
+<%= @employee.last_name %><br>
+<%= @employee.alias %><br>
+<%= @employee.title %><br>
+<%= @employee.office %><br>
+<img src="<%= @employee.img_url %>"><br>
+
+<% @dogs.select do |dog|%>
+<% if dog.id == @employee.dog_id %>
+<%= dog.name %>
+<% end %>
+<% end %>
+<br>
+
+<%= link_to "EDIT", edit_employee_path(@employee) %>
+<%= button_to "DELETE", employee_path(@employee),method: :delete %>
